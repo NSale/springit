@@ -9,5 +9,6 @@ public class SpringitApplication {
 
 	public static void main(String[] args) {
 		run(SpringitApplication.class, args);
+		System.out.println("Welcome to springit!");
 	}
 }
