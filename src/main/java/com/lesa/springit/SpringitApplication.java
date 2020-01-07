@@ -2,11 +2,14 @@ package com.lesa.springit;
 
 import static org.springframework.boot.SpringApplication.run;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.lesa.springit.domain.Comment;
 import com.lesa.springit.domain.Link;
@@ -15,6 +18,7 @@ import com.lesa.springit.repository.LinkRepository;
 import com.lesa.springit.repository.VoteRepository;
 
 @SpringBootApplication
+@EnableJpaAuditing
 public class SpringitApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(SpringitApplication.class);
@@ -34,8 +38,6 @@ public class SpringitApplication {
 			commentRepository.save(comment);
 			
 			link.addComment(comment);
-			
-			System.out.println(link.getComments());
 		};
 	}
 	

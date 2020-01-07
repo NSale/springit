@@ -6,4 +6,5 @@ import com.lesa.springit.domain.Link;
 
 public interface LinkRepository extends JpaRepository<Link, Long>{
 	
+	
 }
