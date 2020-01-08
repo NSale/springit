@@ -4,16 +4,8 @@ import static org.springframework.boot.SpringApplication.run;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-
-import com.lesa.springit.domain.Comment;
-import com.lesa.springit.domain.Link;
-import com.lesa.springit.repository.CommentRepository;
-import com.lesa.springit.repository.LinkRepository;
-import com.lesa.springit.repository.VoteRepository;
 
 @SpringBootApplication
 @EnableJpaAuditing
