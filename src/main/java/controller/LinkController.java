@@ -18,7 +18,7 @@ public class LinkController {
 	@GetMapping("/")
 	public String list(Model model) {
 		model.addAttribute("links", linkRepository.findAll());
-		return "link/index";
+		return "link/list";
 	}
 	
 }
