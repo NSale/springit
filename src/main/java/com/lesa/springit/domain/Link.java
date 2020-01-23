@@ -13,7 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.URL;
 import org.ocpsoft.prettytime.PrettyTime;
 
 import lombok.Getter;
@@ -34,9 +36,14 @@ public class Link extends Auditable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@NonNull
+	@NotEmpty(message = "Please enter a title.")
 	private String title;
+	
 	@NonNull
+	@NotEmpty(message = "Please enter an url.")
+	@URL(message = "Please enter a valid URL.")
 	private String url;
 	
 	// comments
