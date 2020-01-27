@@ -10,9 +10,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+import com.lesa.springit.controller.LinkController;
+import com.lesa.springit.service.BeanUtil;
+
 import bootstrap.DatabaseLoader;
-import controller.LinkController;
-import service.BeanUtil;
 
 @SpringBootApplication
 @EnableJpaAuditing

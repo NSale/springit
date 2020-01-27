@@ -1,4 +1,4 @@
-package controller;
+package com.lesa.springit.controller;
 
 import java.util.Optional;
 

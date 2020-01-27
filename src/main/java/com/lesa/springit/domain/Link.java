@@ -18,13 +18,14 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 import org.ocpsoft.prettytime.PrettyTime;
 
+import com.lesa.springit.service.BeanUtil;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import service.BeanUtil;
 
 @Entity
 @RequiredArgsConstructor
