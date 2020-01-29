@@ -14,13 +14,15 @@ import com.lesa.springit.controller.LinkController;
 import com.lesa.springit.service.BeanUtil;
 
 import bootstrap.DatabaseLoader;
+import security.SecurityConfiguration;
 
 @SpringBootApplication
 @EnableJpaAuditing
 @ComponentScan(basePackageClasses = {
 										LinkController.class,
 										BeanUtil.class,
-										DatabaseLoader.class
+										DatabaseLoader.class,
+										SecurityConfiguration.class
 									})
 public class SpringitApplication {
 
