@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
@@ -13,7 +14,7 @@ import lombok.NonNull;
 public class Role {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NonNull
@@ -22,8 +23,11 @@ public class Role {
 	@ManyToMany(mappedBy = "roles")
 	private Collection<User> users;
 
+	public Role(String name) {
+		this.name = name;
+	}
+	
 	public Role(@NonNull String name, Collection<User> users) {
-		super();
 		this.name = name;
 		this.users = users;
 	}

@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -25,7 +26,7 @@ import lombok.NonNull;
 public class User implements UserDetails {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NonNull
@@ -48,6 +49,14 @@ public class User implements UserDetails {
 				inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
 	)
 	private Set<Role> roles = new HashSet<>();
+	
+	public void addRole(Role role) {
+		roles.add(role);
+	}
+	
+	public void addRoles(Set<Role> roles) {
+		roles.forEach(this::addRole);
+	}
 
 	public User(@NonNull @Size(min = 8, max = 20) String email, @NonNull String password, @NonNull boolean enabled) {
 		super();

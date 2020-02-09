@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.lesa.springit.controller.LinkController;
 import com.lesa.springit.service.BeanUtil;
@@ -17,7 +16,6 @@ import bootstrap.DatabaseLoader;
 import security.SecurityConfiguration;
 
 @SpringBootApplication
-@EnableJpaAuditing
 @ComponentScan(basePackageClasses = {
 										LinkController.class,
 										BeanUtil.class,

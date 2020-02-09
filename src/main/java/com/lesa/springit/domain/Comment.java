@@ -6,18 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
-@RequiredArgsConstructor
-@Getter @Setter
-@ToString
-@NoArgsConstructor
 public class Comment extends Auditable {
 
 	@Id
@@ -32,11 +23,9 @@ public class Comment extends Auditable {
 	private Link link;
 
 	public Comment() {
-		super();
 	}
 
 	public Comment(@NonNull String body, @NonNull Link link) {
-		super();
 		this.body = body;
 		this.link = link;
 	}
